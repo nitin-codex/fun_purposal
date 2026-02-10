@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will you be my Valentine?</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Proposal Section -->
+        <div id="proposal-section" class="card">
+            <h1 class="title">Will you be my Valentine? 🥺</h1>
+            <p class="subtitle">Official invite from your secret admirer 💌</p>
+            
+            <div class="image-container">
+                <img src="cute_asking.png" alt="Cute cats asking" class="main-image">
+            </div>
+
+            <div class="buttons">
+                <button id="yes-btn" class="btn yes-btn">YES! 💖</button>
+                <button id="no-btn" class="btn no-btn">Actually... No 😈</button>
+            </div>
+            
+            <div class="virtual-date" style="margin-top: 2rem; border-top: 1px dashed #ffaebb; padding-top: 1rem;">
+                <p style="font-size: 0.9rem; color: #ff6b81; font-weight: 600;">Includes:</p>
+                <p style="font-size: 0.8rem; color: #888;">✨ Netflix Party • Video Call • Lots of Love ✨</p>
+            </div>
+        </div>
+
+        <!-- Success Section -->
+        <div id="success-section" class="card hidden">
+            <h1 class="title">Good choice babu! 😉</h1>
+            <p class="subtitle">You just unlocked unlimited hugs, kisses, and cuddles! <br>(redeemable very soon I promise)</p>
+            
+            <div class="image-container">
+                <img src="cute_success.png" alt="Cute cats hugging" class="main-image">
+                <div class="floating-hearts">
+                    <span>❤️</span><span>💖</span><span>💕</span>
+                </div>
+            </div>
+
+            <h2 class="happy-text" style="color: #ff4757; margin-top: 1.5rem;">Now you're stuck with me forever ∞</h2>
+            
+            <p style="margin-top: 2rem; font-size: 0.8rem; color: #aaa;">Wait... do you want to change your mind?</p>
+            <button class="btn disabled-btn" disabled>TOO LATE! 😈</button>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

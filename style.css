@@ -1,0 +1,180 @@
+:root {
+    --primary-color: #ff4757;
+    --secondary-color: #ffaebb;
+    --bg-color: #fff0f3;
+    --card-bg: rgba(255, 255, 255, 0.9);
+    --text-color: #2f3542;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Outfit', sans-serif;
+    background-color: var(--bg-color);
+    background-image: 
+        radial-gradient(#ffccd5 1px, transparent 1px), 
+        radial-gradient(#ffccd5 1px, transparent 1px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border-radius: 24px;
+    box-shadow: 
+        0 10px 30px rgba(255, 71, 87, 0.15),
+        0 4px 10px rgba(255, 71, 87, 0.05);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+
+.title {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 0px rgba(255, 174, 187, 0.2);
+    font-family: 'Pacifico', cursive; /* Use Pacifico for that cute engaging look */
+    line-height: 1.2;
+}
+
+.subtitle {
+    color: #747d8c;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.image-container {
+    position: relative;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.main-image {
+    width: 200px;
+    height: auto;
+    border-radius: 12px; /* Soft rounding */
+    /* Remove heavy shadows from image to keep it sticker-like */
+    filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+    height: 60px; /* Reserve height for button movement */
+    align-items: center;
+}
+
+.btn {
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Outfit', sans-serif;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.yes-btn {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.yes-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px rgba(255, 71, 87, 0.3);
+}
+
+.no-btn {
+    background-color: #f1f2f6;
+    color: var(--text-color);
+}
+
+/* Success State specific styles */
+.hidden {
+    display: none;
+}
+
+.happy-text {
+    animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.disabled-btn {
+    background-color: #ced6e0;
+    color: #fff;
+    cursor: not-allowed;
+    margin-top: 10px;
+}
+
+/* Floating hearts animation in success state */
+.floating-hearts span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 1.5rem;
+    animation: heartFloat 2s ease-in-out infinite;
+    opacity: 0;
+}
+
+.floating-hearts span:nth-child(1) { animation-delay: 0s; transform: translate(-40px, -40px); }
+.floating-hearts span:nth-child(2) { animation-delay: 0.5s; transform: translate(40px, -60px); }
+.floating-hearts span:nth-child(3) { animation-delay: 1s; transform: translate(0px, -80px); }
+
+@keyframes heartFloat {
+    0% { transform: translate(var(--tx, 0), var(--ty, 0)) scale(0.5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translate(var(--tx, 0), calc(var(--ty, 0) - 50px)) scale(1.2); opacity: 0; }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    .card {
+        padding: 1.5rem;
+    }
+    .title {
+        font-size: 1.8rem;
+    }
+    .btn {
+        padding: 10px 24px;
+        font-size: 1rem;
+    }
+}
